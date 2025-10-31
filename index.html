@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Hub - Your Canva for Resumes</title>
+    
+    <style>
+        /* --- Basic Reset & Body --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .navbar .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .cta-button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 5rem 2rem;
+            background-color: #e8f0fe;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #222;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #444;
+        }
+
+        /* --- Template Gallery --- */
+        .template-gallery {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .template-gallery h2 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .template-grid {
+            display: grid;
+            /* This makes the grid responsive: */
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        /* --- Template Card Styling --- */
+        .template-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .template-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .template-card .template-image {
+            /* Using a placeholder image */
+            background-color: #ddd;
+            width: 100%;
+            height: 400px; /* Simulates resume aspect ratio */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-style: italic;
+        }
+
+        .template-card .template-info {
+            padding: 1.5rem;
+        }
+
+        .template-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-card .tags {
+            margin-bottom: 1rem;
+        }
+
+        .template-card .tag {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #555;
+            padding: 0.25rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+        
+        .template-card .tag.tech { background-color: #d6eaff; color: #0056b3; }
+        .template-card .tag.creative { background-color: #ffe0d6; color: #b35600; }
+        .template-card .tag.corporate { background-color: #d6ffea; color: #00b356; }
+
+
+        .template-card .use-template-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .template-card .use-template-btn:hover {
+            background-color: #218838;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #333;
+            color: #f4f4f4;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Resume Hub</div>
+            <ul class="nav-links">
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#">My Resumes</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#" class="cta-button">Sign Up Free</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Create Your Professional Resume in Minutes</h1>
+            <p>Choose from dozens of field-tested templates, built for any industry.</p>
+            <a href="#templates" class="cta-button">Browse Templates</a>
+        </section>
+
+        <section id="templates" class="template-gallery">
+            <h2>Choose Your Template</h2>
+
+            <div class="template-grid">
+                
+                <div class="template-card">
+                    <div class="template-image">[Template Preview Image]</div>
+                    <div class="template-info">
+                        <h3>Modern Minimalist</h3>
+                        <div class="tags">
+                            <span class="tag tech">Tech</span>
+                            <span class="tag creative">Creative</span>
+                        </div>
+                        <button class="use-template-btn" data-template-name="Modern Minimalist">Use This Template</button>
+                    </div>
+                </div>
+
+                <div class="template-card">
+                    <div class="template-image">[Template Preview Image]</div>
+                    <div class="template-info">
+                        <h3>Corporate Classic</h3>
+                        <div class="tags">
+                            <span class="tag corporate">Corporate</span>
+                        </div>
+                        <button class="use-template-btn" data-template-name="Corporate Classic">Use This Template</button>
+                    </div>
+                </div>
+
+                <div class="template-card">
+                    <div class="template-image">[Template Preview Image]</div>
+                    <div class="template-info">
+                        <h3>Creative Vanguard</h3>
+                        <div class="tags">
+                            <span class="tag creative">Creative</span>
+                        </div>
+                        <button class="use-template-btn" data-template-name="Creative Vanguard">Use This Template</button>
+                    </div>
+                </div>
+
+                <div class="template-card">
+                    <div class="template-image">[Template Preview Image]</div>
+                    <div class="template-info">
+                        <h3>Software Engineer</h3>
+                        <div class="tags">
+                            <span class="tag tech">Tech</span>
+                        </div>
+                        <button class="use-template-btn" data-template-name="Software Engineer">Use This Template</button>
+                    </div>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-image">[Template Preview Image]</div>
+                    <div class="template-info">
+                        <h3>Academic Researcher</h3>
+                        <div class="tags">
+                            <span class="tag corporate">Corporate</span>
+                        </div>
+                        <button class="use-template-btn" data-template-name="Academic Researcher">Use This Template</button>
+                    </div>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-image">[Template Preview Image]</div>
+                    <div class="template-info">
+                        <h3>Bold & Modern</h3>
+                        <div class="tags">
+                            <span class="tag creative">Creative</span>
+                            <span class="tag tech">Tech</span>
+                        </div>
+                        <button class="use-template-btn" data-template-name="Bold & Modern">Use This Template</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Resume Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Wait for the full page to load before running script
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Find all buttons with the class .use-template-btn
+            const templateButtons = document.querySelectorAll('.use-template-btn');
+
+            // Loop over each button and add a click event listener
+            templateButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Get the template name from the button's 'data-template-name' attribute
+                    const templateName = button.getAttribute('data-template-name');
+                    
+                    // Show a simple alert.
+                    // In a REAL app, this click would redirect to the editor page,
+                    // like: window.location.href = '/editor?template=' + templateName;
+                    alert('Starting editor for the "' + templateName + '" template!');
+                });
+            });
+
+        });
+    </script>
+
+</body>
+</html>
